@@ -72,3 +72,24 @@
 * CB-6422 [windows8] use cordova/exec/proxy
 * CB-6460: Update license headers
 * Add NOTICE file
+
+### 0.3.1 (Jun 05, 2014)
+* Added translations to documentation. Github close #14
+* Remove deprecated symbols for iOS < 6
+* Fixes captureTasks UI URIs
+* CB-6808 Add license
+* CB-6706: Relax dependency on file plugin
+* CB-6491 add CONTRIBUTING.md
+
+### 0.3.2 (Aug 06, 2014)
+* ubuntu: fix compler warnings
+* ubuntu: support qt 5.2
+* CB-6127 Updated translations for docs
+* CB-6978 captureImage() function fails in Android
+* CB-6890: Fix pluginManager access for 4.0.x branch
+
+### 0.3.3 (Sep 17, 2014)
+* Renamed test dir, added nested plugin.xml
+* added documentation for manual tests
+* CB-6959 Added manual tests
+* CB-6959 Port capture tests to plugin-test-framework

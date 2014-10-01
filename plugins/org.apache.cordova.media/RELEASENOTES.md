@@ -69,3 +69,22 @@
 * CB-6460: Update license headers
 * CB-6465: Add license headers to Tizen code
 * Add NOTICE file
+
+### 0.2.11 (Jun 05, 2014)
+* CB-6127 Spanish and French Translations added. Github close #13
+* CB-6807 Add license
+* CB-6706: Relax dependency on file plugin
+* CB-6478: Fix exception when try to record audio file on windows 8
+* CB-6477: Add musicLibrary and microphone capabilities to windows 8 platform
+* CB-6491 add CONTRIBUTING.md
+
+### 0.2.12 (Aug 06, 2014)
+* CB-6127 Updated translations for docs
+* ios: Make it easier to play media and record audio simultaneously
+* code #s for MediaError
+
+### 0.2.13 (Sep 17, 2014)
+* CB-6963 renamed folder to tests + added nested plugin.xml
+* added documentation for manual tests
+* CB-6963 Port Media manual & automated tests
+* CB-6963 Port media tests to plugin-test-framework
