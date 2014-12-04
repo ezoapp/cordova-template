@@ -1,5 +1,5 @@
 {
-    "version": "0.3.1",
+    "version": "0.3.2",
     "name": "org.apache.cordova.globalization",
     "cordova_name": "Globalization",
     "description": "Cordova Globalization Plugin",

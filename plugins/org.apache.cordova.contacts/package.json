@@ -1,5 +1,5 @@
 {
-    "version": "0.2.13",
+    "version": "0.2.14",
     "name": "org.apache.cordova.contacts",
     "cordova_name": "Contacts",
     "description": "Cordova Contacts Plugin",
