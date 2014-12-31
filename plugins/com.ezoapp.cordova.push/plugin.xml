@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.ezoapp.cordova.push" version="0.1.0">
+  <name>Push</name>
+  <description>EZoApp cordova push plugin</description>
+  <license>MIT</license>
+  <keywords>cordova,gcm,push</keywords>
+  <repo>https://github.com/ezoapp/cordova-plugin-push.git</repo>
+  <issue>https://github.com/ezoapp/cordova-plugin-push/issues</issue>
+
+  <js-module src="www/Push.js" name="Push">
+    <clobbers target="gk.push" />
+  </js-module>
+
+  <js-module src="www/PushConstants.js" name="PushConstants"></js-module>
+
+  <!-- android -->
+  <platform name="android">
+    <source-file src="src/android/Constants.java" target-dir="src/com/ezoapp/cordova/gcm" />
+    <source-file src="src/android/GCM.java" target-dir="src/com/ezoapp/cordova/gcm" />
+    <source-file src="src/android/GCMBroadcastReceiver.java" target-dir="src/com/ezoapp/cordova/gcm" />
+    <source-file src="src/android/GCMIntentService.java" target-dir="src/com/ezoapp/cordova/gcm" />
+
+    <dependency id="com.google.playservices" />
+    <dependency id="android.support.v4" />
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="Push">
+        <param name="android-package" value="com.ezoapp.cordova.gcm.GCM" />
+      </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+      <uses-permission android:name="android.permission.INTERNET" />
+      <uses-permission android:name="android.permission.WAKE_LOCK" />
+      <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+      <uses-permission android:name="$PACKAGE_NAME.permission.C2D_MESSAGE" />
+      <permission android:name="$PACKAGE_NAME.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <receiver android:name="com.ezoapp.cordova.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+        <intent-filter>
+          <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+          <category android:name="$PACKAGE_NAME" />
+        </intent-filter>
+      </receiver>
+
+      <service android:name="com.ezoapp.cordova.gcm.GCMIntentService" />
+    </config-file>
+
+  </platform>
+</plugin>
